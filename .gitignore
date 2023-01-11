@@ -1,0 +1,8 @@
+__pycache__/
+.vscode/
+
+# can't make this part public
+
+/src/
+/tests/
+/requirements.txt
