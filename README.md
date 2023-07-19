@@ -261,8 +261,23 @@ def fn1(a, b=None, *args):
     # NOTICE: we have to init b inside the fn, because the default value assignment happens once at fn declaration time, not at fn invocation. So if it were a mutable object type, each subsequent invocation of the fn would be referencing/reusing the same object instance!
     b = []
 ```
+You can also use keyword arguments (kwargs) using the double asterisk syntax `**` which represents a variable number of arguments which get collected into a dictionary. 
+```python
+# @param name - varargs; dictionary type
+def display(**name):
+    print (name["fname"]+" "+name["mname"]+" "+name["lname"])
+```
+To use this function, specify any subset of the keys in any order:
+```python
+display(fname="John", mname="Doe", lname="Smith")
+```
 
-However, there are `type hints` which allow you to specify the expected types using annotations.
+Function signature order also matters. The function signature must follow the order of normal parameters, then *args, followed by default parameters (if any), and finally **kwargs. Here's the general format of a function signature:
+```python
+def function_name(param1, param2, *args, default_param1=default_value1, default_param2=default_value2, **kwargs):
+```
+
+There are also `type hints` which allow you to specify the expected types using annotations.
 Kind of like in Flow JS inline-comment syntax `/*:type*/`, because even though you now have access to the type name as a variable in the local scope, you still have to enforce the type check manually from inside the function.
 
 ```python
