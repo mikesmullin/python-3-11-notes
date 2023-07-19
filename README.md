@@ -174,7 +174,7 @@ print(m["a"]) # 1
 There are only two kinds of loops in Python: `for`, `while`  
 There are three control keywords: `continue`, `break`, and `pass` (rare; for empty loops)
 
-To iterate number range `for i in range(start,[end],[step=1]):`  
+To iterate number range `for i in range([start],end,[step=1]):`  
 To iterate sequence values `for v in mylist:`  
 To iterate sequence index,values `for i,v in enumerate(mylist):`  
 To iterate map key,values `for k,v in mydict.items():`  
