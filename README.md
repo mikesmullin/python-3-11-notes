@@ -15,6 +15,26 @@ Fn Parenthesis | Required | Optional
 - List comprehensions
 
 ---
+## Virtual Environments
+Similar to [NVM](https://github.com/nvm-sh/nvm) for Node.js; useful when you need multiple versions of Python and/or modules installed, per-project.
+
+1. **One-time setup**: This command will cause `python` to make a new copy of itself into the given subdirectory.
+   ```bash
+   $ python -m venv .venv
+   ```
+   **NOTE:** `.venv` is the name of the directory you want to use. This name is most commonly used, but it could alternatively be anything else you want to remember.
+
+2. **Activating**: This command will override the env vars in your current shell session, including PATH, to the referenced subdirectory. So `python`, `pip`, and related binaries will be executed from there first. Likewise, new modules will be installed into that subdirectory, and Python will look in that subdirectory first when `import` is used.
+   ```bash
+   $ source .venv/bin/activate
+   ```
+
+3. **Deactivating**: If you don't want to just close the shell, you can use this command to restore your original shell environment in the same session.
+   ```bash
+   $ deactivate
+   ```
+
+---
 ## Hello world
 ```python
 print("hello world") # script syntax (like Bash script)
